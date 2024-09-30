@@ -8,5 +8,5 @@
                 <field name="name" string="Title"/>
             </search>
         </field>
-
+    </record>
 </odoo>
