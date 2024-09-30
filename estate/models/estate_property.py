@@ -10,8 +10,6 @@ class TestModel(models.Model):
     _name = "estate_property"
     _description = "Estate Property"
 
-    # name = fields.Char(string='Title', required=True)
-    id = fields.Integer(string='ID', required=True)
-    create_uid = fields.Integer(intiger='create UID', required=false)
-    
+    name = fields.Char(string='Title', required=True)
+  
 
