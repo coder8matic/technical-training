@@ -11,12 +11,12 @@ class EstateProperty(models.Model):
     _description = "Estate Property"
 
     # Basic fields
-    name = fields.Char(string='Name')                # Equivalent to character varying
+    name = fields.Char(string='Name', required=True)                # Equivalent to character varying
     description = fields.Text(string='Description')  # Equivalent to text
     postcode = fields.Char(string='Postcode')        # Equivalent to character varying
-    date_availability = fields.Date(string='Available From')  # Equivalent to date
-    expected_price = fields.Float(string='Expected Price')    # Equivalent to double precision
-    selling_price = fields.Float(string='Selling Price')      # Equivalent to double precision
+    date_availability = fields.Date(string='Available From', copy=False, default=fields.Date.add(fields.Date.today(), months=3) )  # Equivalent to date
+    expected_price = fields.Float(string='Expected Price' )    # Equivalent to double precision
+    selling_price = fields.Float(string='Selling Price', readonly=True, copy=False)      # Equivalent to double precision Copy=False; do not copy fields when copy document
     bedrooms = fields.Integer(string='Bedrooms')             # Equivalent to integer
     living_area = fields.Integer(string='Living Area (sqm)')  # Equivalent to integer
     facades = fields.Integer(string='Number of Facades')      # Equivalent to integer
@@ -29,6 +29,19 @@ class EstateProperty(models.Model):
         ('east', 'East'),
         ('west', 'West')
     ], string='Garden Orientation')
+    active = fields.Boolean(string='Active', default=True)    # Equivalent to boolean
+    state = fields.Selection([                               # Equivalent to character varying
+        ('new', 'New'),
+        ('offer_received', 'Offer Received'),
+        ('offer_accepted', 'Offer Accepted'),
+        ('sold', 'Sold'),
+        ('cancelled', 'Cancelled')
+    ], 
+        string='State', 
+        default='new',
+        copy=False,
+        required=True
+    )
 
 
   
