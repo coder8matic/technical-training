@@ -11,6 +11,12 @@
                             <field name="name" class="mb16"/>
                         </h1>
                     </div>
+                    <group>
+                        <group>
+                             <field name="postcode"/>
+                             <field name="date_availablity"/>
+                        </group>
+                    </group>
                 </sheet>
             </form>
         </field>
