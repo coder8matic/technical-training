@@ -10,7 +10,6 @@ class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Estate Property"
 
-    # Basic fields
     name = fields.Char(string='Name', required=True)                # Equivalent to character varying
     description = fields.Text(string='Description')  # Equivalent to text
     postcode = fields.Char(string='Postcode')        # Equivalent to character varying
