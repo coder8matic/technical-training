@@ -4,10 +4,10 @@
 # resource
 # https://www.odoo.com/documentation/master/developer/tutorials/server_framework_101/03_basicmodel.html
 
-from odoo import models
+from odoo import models, fields
 
 class TestModel(models.Model):
-    _name = "estate_property"
+    _name = "estate.property"
     _description = "Estate Property"
 
     # Basic fields
@@ -30,6 +30,6 @@ class TestModel(models.Model):
         ('west', 'West')
     ], string='Garden Orientation')
 
-    
+
   
 
