@@ -16,7 +16,7 @@ class EstateProperty(models.Model):
     date_availability = fields.Date(string='Available From', copy=False, default=fields.Date.add(fields.Date.today(), months=3) )  # Equivalent to date
     expected_price = fields.Float(string='Expected Price' )    # Equivalent to double precision
     selling_price = fields.Float(string='Selling Price', readonly=True, copy=False)      # Equivalent to double precision Copy=False; do not copy fields when copy document
-    bedrooms = fields.Integer(string='Bedrooms')             # Equivalent to integer
+    bedrooms = fields.Integer(string='Bedrooms', default=2)   # Equivalent to integer
     living_area = fields.Integer(string='Living Area (sqm)')  # Equivalent to integer
     facades = fields.Integer(string='Number of Facades')      # Equivalent to integer
     garage = fields.Boolean(string='Garage Available')        # Equivalent to boolean
