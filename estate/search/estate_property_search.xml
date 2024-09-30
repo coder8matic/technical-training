@@ -2,7 +2,7 @@
 <odoo>
     <record id="estate_property_search" model="ir.ui.view">
         <field name="name">estate.propery.search</field>
-        <field name="model">estate.propery</field>
+        <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <search strinf="Pro">
                 <field name="name" string="Title"/>
