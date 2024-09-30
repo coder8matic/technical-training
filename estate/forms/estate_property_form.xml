@@ -16,6 +16,10 @@
                              <field name="postcode"/>
                              <field name="date_availability"/>
                         </group>
+                        <group>
+                             <field name="expected_price"/>
+                             <field name="selling_price"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
