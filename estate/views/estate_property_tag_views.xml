@@ -10,7 +10,7 @@
         <field name="model">estate.property.tag</field>
         <field name="arch" type="xml">
             <list string="Tags">
-                <field name="tag_name"/>
+                <field name="name"/>
             </list>
         </field>
     </record>
