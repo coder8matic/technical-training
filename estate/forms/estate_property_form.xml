@@ -30,8 +30,6 @@
                                 <field name="garden_orientation"/>
                             </group>
                         </page>
-                    </notebook>
-                    <notebook>
                         <page string="Other Info">
                             <group>
                                 <field name="salesperson_id"/>
