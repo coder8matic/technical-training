@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <search string="Pro">
                 <field name="name" string="Title"/>
-                <field name="name" string="postcode"/>
+                <field name="postcode"/>
             </search>
             <separator/>
             <filter string="Available" name="available" domain="[('state', 'in', ['new', 'offer_received'])]"/>
