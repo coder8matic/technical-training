@@ -46,9 +46,18 @@ class EstateProperty(models.Model):
     total_area = fields.Float(string='Total area', compute='_compute_total_area')
     @api.depends("living_area", "garden_area")
     def _compute_total_area(self):
-        for record in self:
-            record.total_area = record.living_area + record.garden_area
+        for property in self:
+            property.total_area = property.living_area + property.garden_area
 
+    best_offer = fields.Float(string='Best Offer', compute='_compute_best_offer')
+    @api.depends("offer_ids.price")
+    def _compute_total_area(self):
+        for property in self:
+            if property.best_offer_ids:
+                property.best_offer = max(property.offer_ids.mapped('price'))
+            else:
+                property.best_offer = 0
+    
     # Relational Fields
     property_type_id = fields.Many2one('estate.property.type', string='Property Type')  # Equivalent to integer
     salesperson_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)  # Equivalent to integer
