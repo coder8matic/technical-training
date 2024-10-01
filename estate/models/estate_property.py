@@ -51,7 +51,7 @@ class EstateProperty(models.Model):
 
     best_offer = fields.Float(string='Best Offer', compute='_compute_best_offer')
     @api.depends("offer_ids.price")
-    def _compute_total_area(self):
+    def _compute_best_offer(self):
         for property in self:
             if property.best_offer:
                 property.best_offer = max(property.offer_ids.mapped('price'))
