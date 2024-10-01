@@ -27,7 +27,7 @@
                             <group>
                                 <field name="description"/>
                                 <field name="bedrooms"/>
-                                <field name="leaving_area"/>
+                                <field name="living_area"/>
                                 <field name="garden"/>
                                 <field name="garden_orientation"/>
                                 <field name="garden_area"/>
