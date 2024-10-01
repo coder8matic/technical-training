@@ -43,7 +43,7 @@ class EstateProperty(models.Model):
     )
 
     # Computed Fields
-    total_area = fields.Float(string='Total area', compute='_compute_total')
+    total_area = fields.Float(string='Total area', compute='_compute_total_area')
     @api.depends("living_area", "garden_area")
     def _compute_total_area(self):
         for record in self:
