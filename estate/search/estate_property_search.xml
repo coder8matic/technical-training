@@ -7,9 +7,9 @@
             <search string="Property Search">
                 <field name="name" string="Title"/>
                 <field name="postcode"/>
+                <separator/>
+                <filter string="Available" name="available" domain="[('state', 'in', ['new', 'offer_received'])]"/>
             </search>
-            <separator/>
-            <filter string="Available" name="available" domain="[('state', 'in', ['new', 'offer_received'])]"/>
         </field>
     </record>
 </odoo>
