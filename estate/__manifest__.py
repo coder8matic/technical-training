@@ -5,10 +5,10 @@
     "depends": ["base"],  # dependencies 
     "data": [
         "security/ir.model.access.csv",
-        "search/estate_property_search.xml",
         "views/estate_property_views.xml",
         "views/estate_menus.xml",
         "forms/estate_property_form.xml",
+        "search/estate_property_search.xml",
     ],
     "installable": True,
     'license': 'LGPL-3',
