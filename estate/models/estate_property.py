@@ -4,7 +4,7 @@
 # resource
 # https://www.odoo.com/documentation/master/developer/tutorials/server_framework_101/03_basicmodel.html
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 class EstateProperty(models.Model):
     _name = "estate.property"
@@ -41,6 +41,14 @@ class EstateProperty(models.Model):
         copy=False,
         required=True
     )
+
+    # Computed Fields
+    total_area = fields.Float(string='Total area', compute='_compute_total')
+    @api.depends("living_area", "garden_area")
+    def _compute_total_area(self):
+        for record in self:
+            record.total_area = record.living_area + record.garden_area
+
     # Relational Fields
     property_type_id = fields.Many2one('estate.property.type', string='Property Type')  # Equivalent to integer
     salesperson_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)  # Equivalent to integer
