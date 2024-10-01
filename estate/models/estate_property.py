@@ -41,7 +41,12 @@ class EstateProperty(models.Model):
         copy=False,
         required=True
     )
-
+    # Relational Fields
+    property_type_id = fields.Many2one('estate.property.type', string='Property Type')  # Equivalent to integer
+    salesperson_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)  # Equivalent to integer
+    buyer_id = fields.Many2one('res.partner', string='Buyer' copy=False)  # Equivalent to integer
+    tag_ids = fields.Many2many('estate.property.tag', string='Tags')  # Equivalent to integer[]
+    offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers')  # Equivalent to integer[]
 
   
 
