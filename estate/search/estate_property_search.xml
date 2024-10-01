@@ -7,6 +7,8 @@
             <search string="Pro">
                 <field name="name" string="Title"/>
             </search>
+            <seperator/>
+            <filter string="Available" domain="[('state', 'in', ['new', 'offer_received'])]"/>
         </field>
     </record>
 </odoo>
