@@ -11,5 +11,5 @@ class EstatePropertyOffer(models.Model):
     ], string='Status', 
        copy=False
     )
-    property_id = fields.Many2one('estate.property', string='Property', required=True) # Equivalent to integer
+    property_id = fields.Many2one('estate.property', string='Property ID', required=True) # Equivalent to integer
     partner_id = fields.Many2one('res.partner', string='Partner', required=True) # Equivalent to integer
