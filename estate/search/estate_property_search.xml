@@ -8,7 +8,7 @@
                 <field name="name" string="Title"/>
             </search>
             <separator/>
-            <filter string="Available" domain="[('state', 'in', ['new', 'offer_received'])]"/>
+            <filter string="Available" name="available" domain="[('state', 'in', ['new', 'offer_received'])]"/>
         </field>
     </record>
 </odoo>
